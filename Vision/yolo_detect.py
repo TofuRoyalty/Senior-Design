@@ -4,7 +4,7 @@ Usage:
     python yolo_detect.py image.jpg            # run on an image
     python yolo_detect.py video.mp4            # run on a video file
     python yolo_detect.py 0                    # run on webcam 0 (press q to quit)
-    python yolo_detect.py image.jpg --model yolov8s.pt --conf 0.4
+    python yolo_detect.py image.jpg --model yolo26s.pt --conf 0.4
 """
 import argparse
 
@@ -15,7 +15,7 @@ from ultralytics import YOLO
 def parse_args():
     p = argparse.ArgumentParser(description="Run YOLO detection on an image, video, or webcam.")
     p.add_argument("source", help="image/video path, or webcam index (e.g. 0)")
-    p.add_argument("--model", default="yolov8n.pt", help="weights file (auto-downloaded if missing)")
+    p.add_argument("--model", default="yolo26n.pt", help="weights file (auto-downloaded if missing)")
     p.add_argument("--conf", type=float, default=0.25, help="confidence threshold")
     p.add_argument("--save", action="store_true", help="save annotated output to runs/detect")
     p.add_argument("--no-show", action="store_true", help="don't open a display window")

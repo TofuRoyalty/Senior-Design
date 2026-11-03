@@ -3,7 +3,7 @@
 Usage:
     python live_people.py                  # camera index 0
     python live_people.py --camera 1       # pick another camera
-    python live_people.py --conf 0.5 --model yolov8s.pt
+    python live_people.py --conf 0.5 --model yolo26s.pt
 
 Press q (or Esc) in the window to quit.
 """
@@ -19,7 +19,7 @@ PERSON_CLASS = 0  # COCO class id for "person"
 def parse_args():
     p = argparse.ArgumentParser(description="Live person detection from a USB camera.")
     p.add_argument("--camera", type=int, default=0, help="camera index (default 0)")
-    p.add_argument("--model", default="yolov8n.pt", help="weights file")
+    p.add_argument("--model", default="yolo26n.pt", help="weights file")
     p.add_argument("--conf", type=float, default=0.4, help="confidence threshold")
     p.add_argument("--width", type=int, default=1280, help="requested capture width")
     p.add_argument("--height", type=int, default=720, help="requested capture height")
